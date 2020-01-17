@@ -1,0 +1,83 @@
++Command line: echo hello world
+Result:
+hello world
+
++Command: passwd
+Result:
+Changing password for hou.
+Current password: 
+
++Command:date
+Result:
+Fri 17 Jan 2020 08:59:55 AM +07
+
++Command:hostname
+Result:
+pop-os
+
++Command:arch
+Result:
+x86_64
+
++Command:uname
+Result:
+Linux
+
++Command:dmesg
++Result:
+...
+[  128.904451] input: acer Predator Gaming Mouse PMW 710 Keyboard as /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.1/0003:12CF:0389.0002/input/input14
+[  128.964177] input: acer Predator Gaming Mouse PMW 710 Consumer Control as /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.1/0003:12CF:0389.0002/input/input15
+[  128.964294] hid-generic 0003:12CF:0389.0002: input,hiddev0,hidraw1: USB HID v1.11 Keyboard [acer Predator Gaming Mouse PMW 710] on usb-0000:00:14.0-1/input1
+[  217.492637] intel_pstate: Turbo disabled by BIOS or unavailable on processor
+[  217.502356] ahci 0000:00:17.0: port does not support device sleep
+[  222.844219] acer_wmi: Unknown function number - 4 - 0
+[  223.104128] acer_wmi: Unknown function number - 4 - 0
+
++Command:uptime
+Result:
+09:05:36 up 15 min,  1 user,  load average: 0.51, 0.64, 0.54
+
++Command:who am i
+Result:
+There is nothing display on the screen after i write this command down.
+
++Command:whoami
+Result:
+hou (which is my user name by the way).
+
++Command:who
+Result:
+hou      :1           2020-01-17 15:50 (:1)
+
++Command:id
+Result:
+uid=1000(hou) gid=1000(hou) groups=1000(hou),4(adm),27(sudo)
+
++Command:last
+Result:
+hou      :1           :1               Thu Oct  3 05:59 - down   (00:03)
+reboot   system boot  5.0.0-21-generic Thu Oct  3 05:58 - 06:02  (00:03)
+reboot   system boot  5.0.0-21-generic Thu Oct  3 03:00 - 03:00  (00:00)
+reboot   system boot  5.0.0-21-generic Wed Oct  2 13:38 - 13:38  (00:00)
+reboot   system boot  5.0.0-21-generic Wed Oct  2 13:37 - 13:37  (00:00)
+hou      :1           :1               Wed Oct  2 18:19 - 11:23  (-6:56)
+reboot   system boot  5.0.0-21-generic Wed Oct  2 18:19 - 11:23  (-6:55)
+reboot   system boot  5.0.0-21-generic Wed Oct  2 10:36 - 10:37  (00:00)
+hou      :0           :0               Wed Oct  2 10:33 - down   (00:01)
+reboot   system boot  5.0.0-21-generic Wed Oct  2 17:29 - 10:35  (-6:54)
+
+wtmp begins Wed Oct  2 17:29:33 2019
+
++Command:finger
+Result:
+Command 'finger' not found, but can be installed with:
+
+sudo apt install finger
+
++Command:w
+Result:
+ 09:14:42 up 24 min,  1 user,  load average: 0.75, 0.61, 0.56
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+hou      :1       :1               15:50   ?xdm?   1:25   0.00s /usr/lib/gdm3
+

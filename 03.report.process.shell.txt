@@ -1,0 +1,33 @@
+Task 1:
+Command: ps e
+Result:
+ 1895 tty2     Sl     0:06 /usr/lib/ibus/ibus-engine-simple LANGUAGE=en_US:en USER=hou XDG_SEAT=seat0 XDG_SESSION_TYPE=x11 SSH_AGENT_PID=1583 SHLVL=0 QT4_IM_MODULE=xim HOME=/home/hou DESKTOP
+ 2052 tty2     Sl+    4:57 /usr/lib/firefox/firefox GJS_DEBUG_TOPICS=JS ERROR;JS LOG LANGUAGE=en_US:en USER=hou XDG_SEAT=seat0 XDG_SESSION_TYPE=x11 SSH_AGENT_PID=1583 SHLVL=0 QT4_IM_MODULE=x
+ 2213 tty2     Sl+    0:03 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5982 -prefMapSize 181232 -parentBuildID 20190718181417 -greomni /usr/lib/firefox/omni.ja -
+ 2263 tty2     Sl+    5:49 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 6100 -prefMapSize 181232 -parentBuildID 20190718181417 -greomni /usr/lib/firefox/omni.ja -
+ 2399 tty2     Sl+    0:40 io.elementary.appcenter -s LANGUAGE=en_US:en USER=hou XDG_SEAT=seat0 XDG_SESSION_TYPE=x11 SSH_AGENT_PID=1583 SHLVL=0 QT4_IM_MODULE=xim HOME=/home/hou DESKTOP_SESSI
+ 3919 tty2     Sl+    0:42 /usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 8387 -prefMapSize 181232 -parentBuildID 20190718181417 -greomni /usr/lib/firefox/omni.ja -
+ 5970 tty2     Sl+    0:14 /usr/lib/firefox/firefox -contentproc -childID 14 -isForBrowser -prefsLen 9156 -prefMapSize 181232 -parentBuildID 20190718181417 -greomni /usr/lib/firefox/omni.ja 
+ 6298 pts/0    Ss     0:00 bash GJS_DEBUG_TOPICS=JS ERROR;JS LOG SSH_AUTH_SOCK=/run/user/1000/keyring/ssh SESSION_MANAGER=local/pop-os:@/tmp/.ICE-unix/1478,unix/pop-os:/tmp/.ICE-unix/1478 GN
+ 6838 tty2     Sl+    0:00 /usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 9156 -prefMapSize 181232 -parentBuildID 20190718181417 -greomni /usr/lib/firefox/omni.ja 
+ 7457 pts/0    R+     0:00 ps e SHELL=/bin/bash SESSION_MANAGER=local/pop-os:@/tmp/.ICE-unix/1478,unix/pop-os:/tmp/.ICE-unix/1478 QT_ACCESSIBILITY=1 COLORTERM=truecolor XDG_CONFIG_DIRS=/etc/
+
+Task 2:
+Code:
+ps aux | grep calculator
+Result:
+hou       3225  0.6  0.5 640904 42400 tty2     Sl+  10:53   0:00 gnome-calculator
+hou       3252  0.0  0.0  18744   912 pts/0    S+   10:55   0:00 grep --color=auto calculator
+
+Code:
+ls -l /proc/3225/status
+Result:
+-r--r--r-- 1 hou hou 0 Jan 17 10:54 /proc/3225/status
+
+Code:
+kill -s stop 3225
+kill -s cont 3225
+kill -s kill 3225
+
+
+

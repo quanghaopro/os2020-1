@@ -1,0 +1,49 @@
+Task 1:
+Command:
+cd Documents
+ls | grep list
+
+Result:
+The result is blank
+
+Task 2:
+Command:
+wc -l /etc/passwd
+
+Result:
+42 /etc/passwd
+
+Task 3:
+Command:
+free total
+
+Result:
+total        used        free      shared  buff/cache   available
+Mem:        8000640     2142264     4436968      166528     1421408     5415648
+Swap:      32648696           0    32648696
+
+Task 4:
+Command:
+cat /proc/cpuinfo
+
+Result:
+vpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 4608.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+Note: I found this 
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+
+Task 5
+Command:
+find -name " *.jpg" |wc -l
+
+Result:
+0
+
