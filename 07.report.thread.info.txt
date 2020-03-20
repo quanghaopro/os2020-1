@@ -1,0 +1,9 @@
+hou@pop-os:~$ ps -A |grep firefox
+ 5396 tty2     00:10:07 firefox
+hou@pop-os:~$ ps -o nlwp 5396
+NLWP
+  81
+hou@pop-os:~$ cd /proc/5396/task
+hou@pop-os:/proc/5396/task$ ls |wc -l
+79
+

@@ -1,0 +1,64 @@
+1st Execution:
+Command:~$ awk '{print}' /proc/sched_debug | grep "switches"
+Output:
+  .nr_switches                   : 5376433
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5442812
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5243920
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5311686
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5443205
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5302940
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5552405
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+  .nr_switches                   : 5589944
+ S           task   PID         tree-key  switches  prio     wait-time             sum-exec        sum-sleep
+
+2nd Execution:
+Command: ps -A| grep systemd
+Output:
+    1 ?        00:00:10 systemd
+  433 ?        00:00:01 systemd-journal
+  476 ?        00:00:00 systemd-udevd
+  823 ?        00:00:01 systemd-resolve
+  824 ?        00:00:00 systemd-timesyn
+  877 ?        00:00:00 systemd-logind
+ 1054 ?        00:00:00 systemd
+ 1416 ?        00:00:00 systemd
+
+Command:
+ps -A | grep systemd | awk '{print $1}' >data.txt
+while read i
+> do awk '{print}' /proc/$i/sched | grep switches;
+> done <./data.txt
+Output:
+nr_switches                                  :               320092
+nr_voluntary_switches                        :               318985
+nr_involuntary_switches                      :                 1107
+nr_switches                                  :                 3446
+nr_voluntary_switches                        :                 3179
+nr_involuntary_switches                      :                  267
+nr_switches                                  :                 2401
+nr_voluntary_switches                        :                 1721
+nr_involuntary_switches                      :                  680
+nr_switches                                  :                 6138
+nr_voluntary_switches                        :                 5663
+nr_involuntary_switches                      :                  475
+nr_switches                                  :                  139
+nr_voluntary_switches                        :                  112
+nr_involuntary_switches                      :                   27
+nr_switches                                  :                12584
+nr_voluntary_switches                        :                12539
+nr_involuntary_switches                      :                   45
+nr_switches                                  :                  105
+nr_voluntary_switches                        :                   86
+nr_involuntary_switches                      :                   19
+nr_switches                                  :                  653
+nr_voluntary_switches                        :                  608
+nr_involuntary_switches                      :                   45
+
+
